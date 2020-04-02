@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+</head>
+<body>
+    <h1>
+        <%= @restaurant.name %>
+    </h1>
+    <h2>
+        <%= @restaurant.cuisine %>
+    </h2>
+
+    <form action="/restaurants/<%= @restaurant.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" name="delete" value="Delete Restaurant">
+    </form>
+        
+    <form action="/restaurants/<%= @restaurant.id %>/edit" method="GET">
+        <input type="submit" name="Edit" value="Edit Restaurant">
+    </form>
+
+    <form action="/restaurants" method="GET">
+        <input type="submit" name="index" value="Back to index">
+    </form>
+
+</body>
+</html>

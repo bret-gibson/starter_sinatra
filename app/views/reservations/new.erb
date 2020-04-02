@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Reservation</title>
+</head>
+<body>
+
+    <h1>Select a customer and restaurant to make a reservation:</h1>
+    <form action="/reservations" method="POST">
+      <label for="customer">Customer</label>
+        <select name="customer">
+
+            <% @customers.each do |customer|  %>
+                <option value="<%= customer.id %>">
+                    <%= customer.name %>
+                </option>
+            <% end %>
+        </select>
+
+        <label for="restaurant">Restaurant</label>
+        <select name="restaurant">
+
+            <% @restaurants.each do |restaurant|  %>
+                <option value="<%= restaurant.id %>">
+                    <%= restaurant.name %>
+                </option>
+            <% end %>
+        </select>
+        <label for="date">Date</label>
+        <input type="text" name='date' placeholder="enter a date">
+        <input type="submit" value="Make Reservation">
+    </form>
+</body>
+</html>

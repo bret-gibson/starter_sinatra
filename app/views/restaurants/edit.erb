@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/restaurants/<%= @restaurant.id %>" method="POST">
+        <input type="hidden" name="_method" value="PATCH">
+        <label for="name">Edit Restaurant Name: <input type="text" name="name" value="<%= @restaurant.name %>" ></label>
+        <label for="cuisine">Edit Cuisine: <input type="text" name="cuisine" value="<%= @restaurant.cuisine %>"></label>
+        <input type="submit" name="submit" value="submit">
+    </form>
+</body>
+</html>
